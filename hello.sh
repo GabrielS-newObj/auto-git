@@ -4,9 +4,9 @@ option=$(git branch | fzf --height 20% --layout reverse)
 
 echo "Selected: option: $option"
 
-option=$({} | tr -d "* ")
+option2=$(option | tr -d "* ")
 
 
-echo "Selected: option: $option"
+echo "Selected: option: $option2"
 
 git switch $option
