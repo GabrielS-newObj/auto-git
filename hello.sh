@@ -6,4 +6,7 @@ echo "Selected: option: $option"
 
 option=$({} | tr -d "* ")
 
+
+echo "Selected: option: $option"
+
 git switch $option
