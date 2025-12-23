@@ -10,7 +10,6 @@ option=$(git branch | fzf +m\
         --color bg:#222222)
 
 
-git switch $option
 
 
 
@@ -21,3 +20,7 @@ if [ $? -gt 0 ]; then
         exit 1
 fi
 
+
+
+
+git switch $option
