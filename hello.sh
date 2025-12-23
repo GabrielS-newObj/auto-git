@@ -1,15 +1,14 @@
 #!/bin/bash
 
-option=$(git branch | fzf \
+optionCleared=$(git branch | tr -d "* ")
+
+
+option=$( echo $optionCleared | fzf \
         --height 20% \
-        --layout reverse)
+        --layout reverse \
+        --border \
+        --preview 'git log --oneline $( echo {} | optionCleared)')
 
 
-echo "Selected: option: $option"
-
-option=$( echo $option | tr -d "* ")
-
-
-echo "Select: option: $option"
 
 git switch $option
