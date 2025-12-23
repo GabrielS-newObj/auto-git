@@ -7,5 +7,7 @@ option=$(git branch | fzf \
         --preview \
                 'git log --oneline $( echo{} | tr -d "* ")')
 
+option=$( echo $option | tr -d "* ")
+
 
 git switch $option
