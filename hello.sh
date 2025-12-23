@@ -6,7 +6,7 @@ option=$(git branch | fzf \
         --layout reverse \
         --border \
         --preview 'git log --oneline $(echo {} | tr -d "* ")' \
-        --color bg:#222222, preview-br:#333333)
+        --color bg:#222222)
 
 
 git switch $option
