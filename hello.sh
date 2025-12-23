@@ -1,4 +1,3 @@
-#!/bin/bash
 
 option=$(git branch | fzf \
         --height 20% \
