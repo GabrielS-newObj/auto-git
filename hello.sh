@@ -5,7 +5,7 @@ option=$(git branch | fzf \
         --layout reverse \
         --border \
         --preview \
-                'git log --oneline')
+                'git log --oneline $( echo{} | tr -d "* ")')
 
 option=$( echo $option | tr -d "* ")
 
