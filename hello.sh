@@ -10,6 +10,10 @@ option=$(git branch | fzf +m\
         --color bg:#222222)
 
 
+git switch $option
+
+
+
 #-gt is bigger than (>) 
 #-lt is less than (<)
 if [ $? -gt 0 ]; then
@@ -21,6 +25,3 @@ else
         exit 1
 fi
 
-
-
-git switch $option
