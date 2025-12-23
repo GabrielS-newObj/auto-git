@@ -19,9 +19,5 @@ git switch $option
 if [ $? -gt 0 ]; then
         echo "Exiting because an error!... be carefull with commands later :)"
         exit 1
-
-else
-        echo "Exiting because an abnormal thing. Pay attemption, please."
-        exit 1
 fi
 
