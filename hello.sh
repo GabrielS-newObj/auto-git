@@ -6,13 +6,8 @@ option=$(git branch | fzf +m\
         --height 20% \
         --layout reverse \
         --border \
-<<<<<<< HEAD
         --preview 'git log --oneline $(echo {} | tr -d "* ")' \
         --color bg:#222222)
-=======
-        --preview \
-                git log --oneline)
->>>>>>> de1ca48 (update hello.sh in screen log)
 
 
 
