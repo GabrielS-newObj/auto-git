@@ -52,10 +52,22 @@ function mergeBranch(){
 
         avoidExitBug
 
-        
-        git merge "$option"
-}
 
+        echo "continue merging <$option> overwriting <$(git branch | grep "^*")>? (y/n)"
+        
+        result=$?
+        if [$result -eq "n"]; then {
+                exit 0
+        }
+        elif [$result -eq "y"]; then {
+                git merge "$option"
+        }
+        else {
+                echo "unknown option :("
+                echo "try again!"
+        }
+
+}
 
 
 
