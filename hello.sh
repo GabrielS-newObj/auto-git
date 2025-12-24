@@ -58,16 +58,16 @@ function mergeBranch(){
         
 
         result=$?
-        if [$result -eq "n"]; then {
+        if [$result -eq "n"]; then 
                 exit 0
-        }
-        elif [$result -eq "y"]; then {
+        
+        elif [$result -eq "y"]; then 
                 git merge $option
-        }
-        else {
+        
+        else 
                 echo "unknown option :("
                 echo "try again!"
-        }
+        
 
 }
 
