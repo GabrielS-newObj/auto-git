@@ -63,10 +63,10 @@ function mergeBranch(){
 
 
 
-        if ["$?" = "n"]; then 
+        if ["$?" -eq "n"]; then 
                 exit 0
         
-        elif ["$?" = "y"]; then 
+        elif ["$?" -eq "y"]; then 
                 git merge "$option"
 
         else 
