@@ -72,10 +72,12 @@ function mergeBranch(){
         y="y"
 
 
-        if ["$result" = "n"]; then 
-                echo $(exit 0)
-        elif ["$result" = "y"]; then 
-                echo $(git merge "$option")
+        if ["$result" = "$n"]; then 
+                echo "exiting..."
+                exit 0
+        elif ["$result" = "$y"]; then 
+                git merge "$option"
+                echo "merged!"
         else 
                 echo "unknown option :("
                 echo "try again!"
