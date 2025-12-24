@@ -6,7 +6,7 @@
 function avoidExitBug(){
         #-gt is bigger than (>) 
         #-lt is less than (<)
-        if [ $? -gt 0 ]; then
+        if [ "$?" -gt 0 ]; then
                 echo "Exiting because an error!... be carefull with commands later :)"
                 exit 1
         fi
@@ -56,17 +56,19 @@ function mergeBranch(){
 
         
         now=$(git branch | grep "^* " | tr -d "* ")
-        option=$( $option | tr -d "* ")
+
 
         read -p "continue merging <$now> overwriting by <$option>? (y/n)" result
         
 
         echo "result: "$result
 
-        if [["$result" == "n"]]; then 
+
+
+        if ["$result" -eq "$n"]; then 
                 exit 0
-        elif [$result -eq y]; then 
-                git merge $option
+        elif ["$result" -eq "$y"]; then 
+                git merge "$option"
         else 
                 echo "unknown option :("
                 echo "try again!"
