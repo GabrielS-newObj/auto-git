@@ -25,7 +25,7 @@ function switchBranch(){
                 --height 20% \
                 --layout reverse \
                 --border \
-                --preview 'git log --oneline $(echo {})' \
+                --preview 'git -c color.ui=always log --oneline $(echo {})' \
                 --color bg:#222222)
 
 
@@ -34,7 +34,7 @@ function switchBranch(){
 
 
 
-        git switch $option
+        git switch "$option"
 }
 
 
@@ -46,14 +46,14 @@ function mergeBranch(){
                 --height 50% \
                 --layout reverse \
                 --border \
-                --preview 'git diff $(git branch | grep "^*")' \
+                --preview 'git -c color.ui=always diff $(git branch | grep "^*") $(echo {})' \
                 --color bg:#222222)
 
 
         avoidExitBug
 
         
-        git merge $option
+        git merge "$option"
 }
 
 
