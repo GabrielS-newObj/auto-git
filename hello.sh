@@ -62,9 +62,7 @@ function mergeBranch(){
         read   
 
 
-        result=$($? | tr -d " ")
-
-        if [0 -eq 0]; then 
+        if ['0' -eq '0']; then 
                 exit 0
         
         elif [$result -eq '1']; then 
