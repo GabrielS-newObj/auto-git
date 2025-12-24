@@ -65,9 +65,9 @@ function mergeBranch(){
 
 
 
-        if ["$result" -eq "$n"]; then 
+        if [["$result" = "$n"]]; then 
                 exit 0
-        elif ["$result" -eq "$y"]; then 
+        elif [["$result" = "$y"]]; then 
                 git merge "$option"
         else 
                 echo "unknown option :("
