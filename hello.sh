@@ -20,7 +20,7 @@ function avoidExitBug(){
 function switchBranch(){
 
         #+m means the fzf command don't accept multivalue (go to more than one branch in this case)
-        #-m means the accept of above explication 
+        #-m means accept the explication above 
         option=$(git branch | fzf +m\
                 --height 20% \
                 --layout reverse \
@@ -30,7 +30,7 @@ function switchBranch(){
 
 
 
-        avoidExitBug
+        avoidExitBug()
 
 
 
@@ -50,10 +50,12 @@ function mergeBranch(){
                 --color bg:#222222)
 
 
-        avoidExitBug
+        avoidExitBug()
+
 
 
         echo "continue merging <$option> overwriting <$(git branch | grep "^*")>? (y/n)"
+        
         
         result=$?
         if [$result -eq "n"]; then {
