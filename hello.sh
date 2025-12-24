@@ -61,7 +61,7 @@ function mergeBranch(){
         read -p "continue merging <$now> overwriting by <$option>? (y/n)" result
         
 
-        result=$($result | tr -d " ")
+        #result=$($result | tr -d " ")
 
         echo "result: "$result
 
@@ -72,10 +72,10 @@ function mergeBranch(){
         y="y"
 
 
-        if ["$result" = "$n"]; then 
-                exit 0
-        elif ["$result" = "$y"]; then 
-                git merge "$option"
+        if ["$result" = "n"]; then 
+                echo $(exit 0)
+        elif ["$result" = "y"]; then 
+                echo $(git merge "$option")
         else 
                 echo "unknown option :("
                 echo "try again!"
