@@ -62,9 +62,9 @@ function mergeBranch(){
         read   
 
 
-        if ['0' -eq '0']; then 
+        if ['0' -eq '0']; then {
                 exit 0
-        
+        }
         elif [$result -eq '1']; then 
                 git merge "$option"
 
