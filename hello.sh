@@ -64,10 +64,10 @@ function mergeBranch(){
 
         result=$($? | tr -d " ")
 
-        if ["$result" -eq 0]; then 
+        if ['$result' -eq '0']; then 
                 exit 0
         
-        elif ["$result" -eq 1]; then 
+        elif ['$result' -eq '1']; then 
                 git merge "$option"
 
         else 
