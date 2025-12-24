@@ -54,10 +54,9 @@ function mergeBranch(){
 
 
 
-        echo "continue merging <$option> overwriting <$(git branch | grep "^*")>? (y/n)"
+        read -p "continue merging <$option> overwriting <$(git branch | grep "^*")>? (y/n)" result
         
 
-        result=$?
         if [$result -eq "n"]; then 
                 exit 0
         
