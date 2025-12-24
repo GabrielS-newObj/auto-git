@@ -18,11 +18,10 @@ function avoidExitBug(){
 
 
 function switchBranch(){
-
         #+m means the fzf command don't accept multivalue (go to more than one branch in this case)
         #-m means accept the explication above 
         option=$(git branch | fzf +m\
-                --height 20% \
+                --height 100% \
                 --layout reverse \
                 --border \
                 --preview 'git -c color.ui=always log --oneline $(echo {})' \
@@ -33,8 +32,7 @@ function switchBranch(){
         avoidExitBug
 
 
-
-        git switch $option
+        git switch "$option"
 }
 
 
@@ -43,7 +41,7 @@ function switchBranch(){
 
 function mergeBranch(){
         option=$(git branch | fzf +m \
-                --height 80% \
+                --height 100% \
                 --layout reverse \
                 --border \
                 --preview 'git -c color.ui=always diff $(echo {})' \
@@ -53,29 +51,26 @@ function mergeBranch(){
         avoidExitBug
 
 
-
-        
-        now=$(git branch | grep "^* " | tr -d "* ")
-
-
-        echo "continue merging <$now> overwriting by <$option>? (1 for yes/0 for no)"
-        read   
-
-
-        if ['0' -eq '0']; then {
-                exit 0
-        }
-        elif [$result -eq '1']; then 
-                git merge "$option"
-
-        else 
-                echo "unknown option :("
-                echo "try again! (1 or 0 only)"
-        fi
-
+        git merge "$option"
 }
 
 
 
-mergeBranch
 
+
+function deleteBranch(){
+        echo "you chose delete branch"
+
+        option=$(git branch | fzf +m \
+                --height 100% \
+                --layout reverse \
+                --border \
+                --preview 'git -c color.ui=always log --oneline $(echo{})' \
+                --color bg:#222222)
+
+        
+        avoidExitBug
+
+
+        git branch -d "$option"
+}
