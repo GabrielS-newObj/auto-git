@@ -55,20 +55,18 @@ function mergeBranch(){
 
 
         
-        option=$( $option | tr -d "* ")
-        now=$(git branch | grep "^* " | tr -d "* ")
+        option=$( $option | fzf | tr -d "* ")
+        now=$(git branch | grep "^* " | fzf | tr -d "* ")
 
-        result=$(read -p "continue merging <$now> overwriting by <$option>? (y/n)") 
+        result=$(read -p "continue merging <$now> overwriting by <$option>? (y/n)" | fzf | tr -d " " ) 
         
-        result=$( $result | tr -d " ")
 
+        echo $result
 
         if [$result -eq 'n']; then 
                 exit 0
-        
         elif [$result -eq 'y']; then 
                 git merge $option
-        
         else 
                 echo "unknown option :("
                 echo "try again!"
