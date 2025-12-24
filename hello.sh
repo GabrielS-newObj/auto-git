@@ -43,7 +43,7 @@ function switchBranch(){
 
 function mergeBranch(){
         option=$(git branch | fzf +m \
-                --height 50% \
+                --height 80% \
                 --layout reverse \
                 --border \
                 --preview 'git -c color.ui=always diff $(echo {})' \
