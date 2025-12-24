@@ -46,7 +46,7 @@ function mergeBranch(){
                 --height 50% \
                 --layout reverse \
                 --border \
-                --preview 'git -c color.ui=always diff $(git branch | grep "^*") $(echo {})' \
+                --preview 'git -c color.ui=always diff $(echo {})' \
                 --color bg:#222222)
 
 
