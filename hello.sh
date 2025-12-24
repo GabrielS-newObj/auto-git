@@ -30,11 +30,11 @@ function switchBranch(){
 
 
 
-        avoidExitBug()
+        avoidExitBug
 
 
 
-        git switch "$option"
+        git switch $option
 }
 
 
@@ -50,19 +50,19 @@ function mergeBranch(){
                 --color bg:#222222)
 
 
-        avoidExitBug()
+        avoidExitBug
 
 
 
         echo "continue merging <$option> overwriting <$(git branch | grep "^*")>? (y/n)"
         
-        
+
         result=$?
         if [$result -eq "n"]; then {
                 exit 0
         }
         elif [$result -eq "y"]; then {
-                git merge "$option"
+                git merge $option
         }
         else {
                 echo "unknown option :("
