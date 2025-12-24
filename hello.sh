@@ -62,13 +62,12 @@ function mergeBranch(){
         read   
 
 
-        echo "$?"
 
 
-        if ["$?" -eq "0"]; then 
+        if ["$?" -eq 0]; then 
                 exit 0
         
-        elif ["$?" -eq "1"]; then 
+        elif ["$?" -eq 1]; then 
                 git merge "$option"
 
         else 
