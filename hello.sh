@@ -72,11 +72,11 @@ function mergeBranch(){
         y="y"
 
 
-        if ["$result" -eq "$n"]; then 
+        if ["$result" = "$n"]; then 
                 exit 0
         fi
 
-        if ["$result" -eq "$y"]; then 
+        if ["$result" ="$y"]; then 
                 git merge "$option"
 
         else 
