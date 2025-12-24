@@ -51,15 +51,16 @@ function mergeBranch(){
 
 
         avoidExitBug
-        
 
 
-        
-        option=$($option | tr -d "* ")
-        toMerge=$(git branch | grep "^*" | tr -d "* ")
 
-        read -p "continue merging <$option> overwriting <$toMerge>? (y/n)" result
         
+        option=$( $option | tr -d "^* ")
+        now=$(git branch | grep "^* " | tr -d "* ")
+
+        read -p "continue merging <$now> overwriting by <$option>? (y/n)" result
+        
+        result=$( $result | tr -d " ")
 
         if [$result -eq "n"]; then 
                 exit 0
