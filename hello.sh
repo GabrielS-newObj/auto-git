@@ -62,6 +62,7 @@ function mergeBranch(){
         read   
 
 
+        echo "$?"
 
 
         if ["$?" -eq "0"]; then 
