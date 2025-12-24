@@ -25,7 +25,7 @@ function switchBranch(){
                 --height 20% \
                 --layout reverse \
                 --border \
-                --preview 'git log --oneline $(echo {} | tr -d "* ")' \
+                --preview 'git log --oneline $(echo {})' \
                 --color bg:#222222)
 
 
@@ -41,4 +41,23 @@ function switchBranch(){
 
 
 
-switchBranch
+function mergeBranch(){
+        option=$(git branch | fzf +m \
+                --height 50% \
+                --layout reverse \
+                --border \
+                --preview 'git diff $(git branch | grep "^*")' \
+                --color bg:#222222)
+
+
+        avoidExitBug
+
+        
+        git merge $option
+}
+
+
+
+
+mergeBranch
+
