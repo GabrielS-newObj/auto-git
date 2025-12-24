@@ -67,7 +67,7 @@ function mergeBranch(){
         else 
                 echo "unknown option :("
                 echo "try again!"
-        
+        fi
 
 }
 
