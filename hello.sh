@@ -91,7 +91,7 @@ function main(){
 
 
         selected=$(\
-                for i in "$menu[@]" ; \
+                for i in "${menu[@]}" ; \
                 do echo $i; \
                 done | fzf +m \
                 --height 100% \
