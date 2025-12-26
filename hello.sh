@@ -137,3 +137,8 @@ function main(){
         esac
 
 }
+
+
+
+
+main
