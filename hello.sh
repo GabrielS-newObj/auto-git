@@ -97,8 +97,7 @@ function main(){
                 --height 100% \
                 --layout reverse \
                 --border \
-                --color bg:#222222
-        )
+                --color bg:#222222)
 
 
 
