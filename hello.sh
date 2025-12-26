@@ -108,26 +108,26 @@ function main(){
 
 
         case "$selected" in
-                ${"$menu[0]"})
+                ${menu[0]})
                         switchBranch
                         exit 0
                 ;;
 
-                ${"$menu[1]"})
+                ${menu[1]})
                         mergeBranch
                         exit 0
                 ;;
 
-                ${"$menu[2]"})
+                ${menu[2]})
                         deleteBranch
                         exit 0
                 ;;
 
-                ${"$menu[3]"})
+                ${menu[3]})
                         echo "Bye! See you later :)..."
                         exit 0
                 ;;
-
+                
                 *)
                         echo "Exiting with no option!"
                         exit 0
