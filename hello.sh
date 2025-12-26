@@ -131,7 +131,7 @@ function main(){
                 *)
                         echo "Exiting with no option!"
                         exit 0
-
+                ;;
         
 
         esac
