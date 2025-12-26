@@ -7,7 +7,7 @@ function avoidExitBug(){
         #-gt is bigger than (>) 
         #-lt is less than (<)
         if [ "$?" -gt 0 ]; then
-                echo "Exiting because an error!... be carefull with commands later :)"
+                echo "Exiting because another choice!"
                 exit 1
         fi
 }
@@ -32,6 +32,7 @@ function switchBranch(){
 
         avoidExitBug
 
+        option=$( echo $option | tr -d "* ") 
 
         git switch "$option"
 }
@@ -57,12 +58,27 @@ function mergeBranch(){
         git merge "$option"
 }
 
-mergeBranch
 
 
 
 
 function deleteBranch(){
+
+
+        read -p "Are you sure want delete some branch? (y/n)" sure
+
+        if ["${sure}" = "y"]; then
+
+        elif ["${sure}" = "n"]; then
+                exit 0
+        else
+                echo "no option found :("
+                exit 0
+        fi
+
+
+
+
         option=$(git branch | fzf +m \
                 --header "---Deleting branch---" \
                 --height 100% \
@@ -74,12 +90,13 @@ function deleteBranch(){
         
         avoidExitBug
 
+        option=$( echo $option | tr -d "* ") 
 
         git branch -d "$option"
 }
 
 
-
+deleteBranch
 
 
 function main(){
