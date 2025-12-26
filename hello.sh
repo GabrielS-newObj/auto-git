@@ -52,11 +52,12 @@ function mergeBranch(){
 
         avoidExitBug
 
-        option="$( $option | tr -d "* ")"
+        option= "$option" | tr -d "* " 
 
         git merge "$option"
 }
 
+mergeBranch
 
 
 
@@ -141,4 +142,3 @@ function main(){
 
 
 
-main
