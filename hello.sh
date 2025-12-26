@@ -67,9 +67,9 @@ function deleteBranch(){
 
         read -p "Are you sure want delete some branch? (y/n)" sure
 
-        if ["${sure}" = "y"]; then
+        if ['${sure}' = 'y']; then
 
-        elif ["${sure}" = "n"]; then
+        elif ['${sure}' = 'n']; then
                 exit 0
         else
                 echo "no option found :("
