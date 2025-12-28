@@ -83,7 +83,7 @@ function deleteBranch(){
         option=$( echo $option | tr -d "* ")
 
 
-        if [[ "$option" == "test"]]; then
+        if ["$option" = "test"]; then
                 echo "you can not delete this branch"
                 exit 0
         fi
