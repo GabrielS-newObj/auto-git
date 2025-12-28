@@ -8,4 +8,4 @@
 3.delete  
 
 
-_This project is rebuild from **YuriMarcon Course of Git and GitHub**_
+_This project is rebuilded as I prefer from **YuriMarcon Course of Git and GitHub**_
