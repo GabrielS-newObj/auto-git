@@ -54,6 +54,7 @@ function mergeBranch(){
                 --color bg:#222222)
 
 
+
         avoidExitBug
 
         option=$( echo $option | tr -d "* ") 
@@ -75,10 +76,18 @@ function deleteBranch(){
                 --preview 'git -c color.ui=always log --oneline $(echo{})' \
                 --color bg:#222222)
 
+
         
         avoidExitBug
 
-        option=$( echo $option | tr -d "* ") 
+        option=$( echo $option | tr -d "* ")
+
+
+        if [[ "$option" = "test" || "$option" = "develop"]]; then
+                echo "you can not delete this branch"
+                exit 0
+        fi
+
 
         git branch -d "$option"
 }
