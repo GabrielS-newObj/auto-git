@@ -4,6 +4,7 @@
 
 
 function avoidExitBug(){
+
         #-gt is bigger than (>) 
         #-lt is less than (<)
         if [ "$?" -gt 0 ]; then
@@ -18,6 +19,7 @@ function avoidExitBug(){
 
 
 function switchBranch(){
+
         #+m means the fzf command don't accept multivalue (go to more than one branch in this case)
         #-m means accept the explication above 
         option=$(git branch | fzf +m\
@@ -42,6 +44,7 @@ function switchBranch(){
 
 
 function mergeBranch(){
+
         option=$(git branch | fzf +m \
                 --header "---Merging branch---" \
                 --height 100% \
@@ -64,21 +67,6 @@ function mergeBranch(){
 
 function deleteBranch(){
 
-
-        read -p "Are you sure want delete some branch? (y/n)" sure
-
-        if ["${sure}" = "y"]; then
-
-        elif ["${sure}" = "n"]; then
-                exit 0
-        else
-                echo "no option found :("
-                exit 0
-        fi
-
-
-
-
         option=$(git branch | fzf +m \
                 --header "---Deleting branch---" \
                 --height 100% \
@@ -96,7 +84,7 @@ function deleteBranch(){
 }
 
 
-deleteBranch
+
 
 
 function main(){
