@@ -149,6 +149,17 @@ function main(){
 
 
 
+function isAGitRepository(){
+
+    git status >> /dev/null 2>&1
+
+    if [ "$?" -eq 128 ]; then
+        echo "this is not a git repository"
+        exit 0
+    fi
+
+}
+
 
 
 main
