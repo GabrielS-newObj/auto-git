@@ -83,12 +83,6 @@ function deleteBranch(){
         option=$( echo $option | tr -d "* ")
 
 
-        if [[ "$option" = "test" || "$option" = "develop"]]; then
-                echo "you can not delete this branch"
-                exit 0
-        fi
-
-
         git branch -d "$option"
 }
 
