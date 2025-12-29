@@ -1,10 +1,9 @@
 # branch manager system 
-\
-\
+
+
 #### implemented with function for do not allows if actual repository have not git
-\
-\
-\
+
+
 **Used for**:
 
 **1**.switch  
