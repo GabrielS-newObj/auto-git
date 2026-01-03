@@ -155,7 +155,7 @@ function isAGitRepository(){
 
     if [ "$?" -eq 128 ]; then
         echo "this is not a git repository"
-        exit 0
+        exit 1
     fi
 
 }
